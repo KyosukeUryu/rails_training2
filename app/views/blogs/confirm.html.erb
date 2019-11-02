@@ -1,0 +1,12 @@
+<h2>投稿確認画面</h2>
+
+<%= form_with(model: @blog, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+
+  <p>タイトル：<%= @blog.title %></p>
+  <p>内容：<%= @blog.content %></p>
+
+  <%= form.submit '投稿する' %>
+  <%= form.submit '作成画面に戻る', name: "back" %>
+<% end %>

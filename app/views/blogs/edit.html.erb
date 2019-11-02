@@ -1,24 +1,5 @@
 <h2>ブログ編集用</h2>
 
-<%= form_with(model: @blog, local: true) do |form| %>
-  <% if @blog.errors.any? %>
-    <h3><%= @blog.errors.count %> 件のエラーがあります。</h3>
-    <ul>
-      <% @blog.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
-
-  <div class="blog_title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div class="blog_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit %>
-<% end %>
+<%= render 'form' %>
 
 <%= render 'back_to_index' %>
